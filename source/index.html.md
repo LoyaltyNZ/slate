@@ -26,7 +26,7 @@ The Queue API Gateway allows platform requests to be sent via Amazon's SQS and p
 
 ## Messages
 
-## PlatformRequest `::message::platform_request`
+### PlatformRequest `::message::platform_request`
 
 ```json-doc
 {
@@ -67,15 +67,17 @@ The Queue API Gateway allows platform requests to be sent via Amazon's SQS and p
 }
 ```
 
-This is the message format for sending requests to the platform via an Amazon SQS queue. The entire message object must be less than 64KiB in size.
-
-
+<aside class="warning">
+The entire message object must be less than 64KiB in size.
+</aside>
+This is the message format for sending requests to the platform via an Amazon SQS queue.
 
 # QueueProcessing API
 
 ## Data Types
 
-## PlatformRequest `::type::platform_request`
+
+### PlatformRequest `::type::platform_request`
 
 ```json-doc
 {
@@ -180,11 +182,12 @@ This is the message format for sending requests to the platform via an Amazon SQ
 }
 ```
 
+<br>
 More information on `query_parameters` can be found in the [Listing, pagination, searches and filters](https://github.com/LoyaltyNZ/awg/blob/master/reference/platform_api.md#lppsf) section.
 
 
 
-## PlatformResult `::type::platform_result`
+### PlatformResult `::type::platform_result`
 
 ```json-doc
 {
@@ -217,7 +220,7 @@ More information on `query_parameters` can be found in the [Listing, pagination,
 
 ## Resources
 
-## QueueProcessingRequest `::resource::queue_processing_request`
+### QueueProcessingRequest `::resource::queue_processing_request`
 
 ```json-doc
 {
@@ -271,7 +274,7 @@ More information on `query_parameters` can be found in the [Listing, pagination,
 
 
 
-## Interface
+### Interface
 
 | HTTP method | Endpoint                          | Result |
 |-------------|-----------------------------------|--------|
@@ -327,7 +330,7 @@ For the `POST` 'create' call, send the following JSON payload:
 
 
 
-## QueueProcessingResult `::resource::queue_processing_result`
+### QueueProcessingResult `::resource::queue_processing_result`
 
 ```json-doc
 {
@@ -366,7 +369,7 @@ For the `POST` 'create' call, send the following JSON payload:
 
 
 
-## Interface
+### Interface
 
 | HTTP method | Endpoint                         | Result |
 |-------------|----------------------------------|--------|
@@ -390,7 +393,7 @@ For the `POST` 'create' call, send the following JSON payload:
 
 ## Data Types
 
-## TransactionData `::type::transaction_data`
+### TransactionData `::type::transaction_data`
 
 This Type encapsulates data related to transactions originating from Points Pro and Loyalty Host transaction files.
 

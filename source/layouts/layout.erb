@@ -23,17 +23,20 @@ under the License.
     <title><%= current_page.data.title || "API Documentation" %></title>
 
     <style>
-<%= Rouge::Themes::Base16::Monokai.render(:scope => '.highlight') %>
+      <%= Rouge::Themes::Base16::Monokai.render(:scope => '.highlight') %>
 
-<%=
-  ##############################################################################
-  # CUSTOM HACK TO NOT SHOW ERRORS WHEN PUBLISHING
-  ##############################################################################
-  if ENV[ 'PUBLISHING_ENV' ] == 'production'
-    ".json-doc > code > .err { background-color: inherit; color: inherit; }"
-  end
-  %>
+      <%=
+        ########################################################################
+        # CUSTOM HACK TO NOT SHOW ERRORS WHEN PUBLISHING
+        ########################################################################
+        if ENV[ 'PUBLISHING_ENV' ] == 'production'
+          ".json-doc > code > .err {background-color: inherit; color: inherit;}"
+        end
+      %>
 
+      .loyalty-logo {
+        background-color: #FEFEFE;
+      }
     </style>
     <%= stylesheet_link_tag :screen, media: :screen %>
     <%= stylesheet_link_tag :print, media: :print %>
@@ -48,11 +51,11 @@ under the License.
     <a href="#" id="nav-button">
       <span>
         NAV
-        <%= image_tag('navbar.png') %>
+        <%= image_tag('navbar.png' ) %>
       </span>
     </a>
     <div class="tocify-wrapper">
-      <%= image_tag "logo.png" %>
+      <%= image_tag( "logo.png", class: 'loyalty-logo' ) %>
       <% if current_page.data.search %>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
