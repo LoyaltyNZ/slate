@@ -23,7 +23,17 @@ under the License.
     <title><%= current_page.data.title || "API Documentation" %></title>
 
     <style>
-      <%= Rouge::Themes::Base16::Monokai.render(:scope => '.highlight') %>
+<%= Rouge::Themes::Base16::Monokai.render(:scope => '.highlight') %>
+
+<%=
+  ##############################################################################
+  # CUSTOM HACK TO NOT SHOW ERRORS WHEN PUBLISHING
+  ##############################################################################
+  if ENV[ 'PUBLISHING_ENV' ] == 'production'
+    ".json-doc > code > .err { background-color: inherit; color: inherit; }"
+  end
+  %>
+
     </style>
     <%= stylesheet_link_tag :screen, media: :screen %>
     <%= stylesheet_link_tag :print, media: :print %>
